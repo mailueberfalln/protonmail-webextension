@@ -246,9 +246,11 @@ export class SessionGrabberService {
             const cookies = [...await browser.cookies.getAll({
                 url: `https://${domain}/api/`,
                 path: "/api/",
+                firstPartyDomain: null,
             }), ...await browser.cookies.getAll({
                 url: `https://${domain}/api/auth/refresh`,
                 path: "/api/auth/refresh",
+                firstPartyDomain: null,
             })];
             for (const cookie of cookies) {
                 allCookies.push(cookie);
@@ -282,6 +284,7 @@ export class SessionGrabberService {
                                 httpOnly: true,
                                 secure: true,
                                 value: session.accessTokenCookie as string,
+                                firstPartyDomain: "protonmail.com",
                                 // sameSite: "no_restriction"
                             } as any);
                             await browser.cookies.set({
@@ -291,6 +294,7 @@ export class SessionGrabberService {
                                 httpOnly: true,
                                 secure: true,
                                 value: session.refreshTokenCookie as string,
+                                firstPartyDomain: "protonmail.com",
                                 // sameSite: "no_restriction"
                             } as any);
                         } catch (error) {
