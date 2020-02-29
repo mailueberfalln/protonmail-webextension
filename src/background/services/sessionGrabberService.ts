@@ -246,11 +246,11 @@ export class SessionGrabberService {
             const cookies = [...await browser.cookies.getAll({
                 url: `https://${domain}/api/`,
                 path: "/api/",
-                firstPartyDomain: null,
+                firstPartyDomain: null as any,
             }), ...await browser.cookies.getAll({
                 url: `https://${domain}/api/auth/refresh`,
                 path: "/api/auth/refresh",
-                firstPartyDomain: null,
+                firstPartyDomain: null as any,
             })];
             for (const cookie of cookies) {
                 allCookies.push(cookie);
