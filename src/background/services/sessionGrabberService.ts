@@ -232,12 +232,7 @@ export class SessionGrabberService {
                 }));
 
                 logger.debug(`new session (${uid}) added`);
-                
-                let firstPartyIsolationEnabled = await (browser as any).privacy.websites.firstPartyIsolate.get({});
-                
-                if (!firstPartyIsolationEnabled) { //don't start fetcher service when FPI is enabled. XHR doesn't send required cookies. otherwise session will be removed
-                    fetcherCronService.pulse();
-                }
+                fetcherCronService.pulse();
             }
         } catch (error) {
             logger.error(error);
