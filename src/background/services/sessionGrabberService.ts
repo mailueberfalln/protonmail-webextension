@@ -265,8 +265,7 @@ export class SessionGrabberService {
         try {
             const allCookies = await this.getAllCookies();
 
-            let firstPartyIsolationEnabled;
-            browser.privacy.websites.firstPartyIsolate.get({}).then(function (got) {firstPartyIsolationEnabled = got.value;});
+            let firstPartyIsolationEnabled = await (browser as any).privacy.websites.firstPartyIsolate.get({});
             
             for (const account of accounts) {
                 for (const session of account.sessions) {
