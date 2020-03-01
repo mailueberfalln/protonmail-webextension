@@ -31,9 +31,6 @@
     "accounts_tooltip_sync": {
         "message": "Neue Emails abrufen"
     },
-    "accounts_tooltip_unsupported": {
-        "message": "Nicht verfügbar (privacy.firstparty.isolate aktiviert)"
-    },
     "accounts_tooltip_account_settings": {
         "message": "Accounteinstellungen öffnen"
     },
@@ -102,6 +99,9 @@
     },
     "tooltip_open": {
         "message": "Auf ProtonMail öffnen"
+    },
+    "tooltip_unsupported_isolation": {
+        "message": "Nicht verfügbar (privacy.firstparty.isolate aktiviert)"
     },
     "badge_expired": {
         "message": "Sitzung abgelaufen"
