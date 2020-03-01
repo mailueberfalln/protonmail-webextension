@@ -22,6 +22,21 @@
     "accounts_title": {
         "message": "ProtonMail Account Liste"
     },
+    "accounts_tooltip_settings": {
+        "message": "Einstellungen öffnen"
+    },
+    "accounts_tooltip_help": {
+        "message": "Hilfeseite öffnen"
+    },
+    "accounts_tooltip_sync": {
+        "message": "Neue Emails abrufen"
+    },
+    "accounts_tooltip_unsupported": {
+        "message": "Nicht verfügbar (privacy.firstparty.isolate aktiviert)"
+    },
+    "accounts_tooltip_account_settings": {
+        "message": "Accounteinstellungen öffnen"
+    },
     "accounts_noAccounts": {
         "message": "Auf ProtonMail einloggen und den ProtonMail Tab fokussieren um deinen Account hinzuzufügen."
     },
@@ -79,6 +94,9 @@
     "settings_domain_label": {
         "message": "Bevorzugte ProtonMail Domain"
     },
+    "settings_version_label": {
+        "message": "Version"
+    },
     "tooltip_autofill": {
         "message": "ProtonMail Nutzernamen automatisch ausfüllen"
     },
@@ -129,6 +147,9 @@
     },
     "accountSettings_button_delete": {
         "message": "Löschen"
+    },
+    "accountSettings_set_as_handler": {
+        "message": "Als mailto: Protokollhandler registrieren"
     },
     "peeking_receivedFrom": {
         "message": "Erhalten von"
