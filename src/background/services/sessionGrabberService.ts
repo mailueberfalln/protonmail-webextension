@@ -266,19 +266,19 @@ export class SessionGrabberService {
             const allCookies = await this.getAllCookies();
 
             let firstPartyIsolationEnabled = await (browser as any).privacy.websites.firstPartyIsolate.get({});
-
-            let firstPartyDomain = "protonmail.com";
-            if (session.domain.includes("protonmail.ch")) { 
-               firstPartyDomain = "protonmail.ch";
-            } else if (session.domain.includes("protonirockerxow.onion")) { //shouldn't need cleaning since it doesn't have a subdomain
-               firstPartyDomain = "protonirockerxow.onion";
-            }
             
             for (const account of accounts) {
                 for (const session of account.sessions) {
                     const uid = session.uid;
                     const authCookie = allCookies.find((n) => n.name === `AUTH-${uid}`);
                     const refreshCookie = allCookies.find((n) => n.name === `REFRESH-${uid}`);
+                    
+                    let firstPartyDomain = "protonmail.com";
+                    if (session.domain.includes("protonmail.ch")) { 
+                       firstPartyDomain = "protonmail.ch";
+                    } else if (session.domain.includes("protonirockerxow.onion")) { //shouldn't need cleaning since it doesn't have a subdomain
+                       firstPartyDomain = "protonirockerxow.onion";
+                    }
 
                     if (authCookie === undefined &&
                         refreshCookie === undefined &&
