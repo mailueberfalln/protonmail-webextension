@@ -92,7 +92,7 @@ const AccountsList: React.FC<AccountsListProps> = (props) => {
                     />
                     <Button
                         visible={accountsToDisplay.length !== 0}
-                        disabled={firstPartyIsolationEnabled ? 1 : props.ui.syncing}
+                        disabled={firstPartyIsolationEnabled ? true : props.ui.syncing}
                         onClick={() => syncFromPopup()}
                         icon={props.ui.syncing ? "hourglass" : "sync"}
                         tooltip={firstPartyIsolationEnabled ? _("tooltip_unsupported_isolation") : _("accounts_tooltip_sync")}
