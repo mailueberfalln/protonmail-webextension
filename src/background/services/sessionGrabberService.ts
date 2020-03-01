@@ -241,7 +241,7 @@ export class SessionGrabberService {
 
     async getAllCookies() {
         const allCookies = [];
-
+        
         for (const domain of protonDomains) {
             const cookies = [...await browser.cookies.getAll({
                 url: `https://${domain}/api/`,
@@ -265,6 +265,9 @@ export class SessionGrabberService {
         try {
             const allCookies = await this.getAllCookies();
 
+            let firstPartyIsolationEnabled;
+            browser.privacy.websites.firstPartyIsolate.get({}).then(function (got) {firstPartyIsolationEnabled = got.value;});
+            
             for (const account of accounts) {
                 for (const session of account.sessions) {
                     const uid = session.uid;
@@ -284,7 +287,7 @@ export class SessionGrabberService {
                                 httpOnly: true,
                                 secure: true,
                                 value: session.accessTokenCookie as string,
-                                firstPartyDomain: "protonmail.com",
+                                firstPartyDomain: firstPartyIsolationEnabled ? "protonmail.com" : null,
                                 // sameSite: "no_restriction"
                             } as any);
                             await browser.cookies.set({
@@ -294,7 +297,7 @@ export class SessionGrabberService {
                                 httpOnly: true,
                                 secure: true,
                                 value: session.refreshTokenCookie as string,
-                                firstPartyDomain: "protonmail.com",
+                                firstPartyDomain: firstPartyIsolationEnabled ? "protonmail.com" : null,
                                 // sameSite: "no_restriction"
                             } as any);
                         } catch (error) {
