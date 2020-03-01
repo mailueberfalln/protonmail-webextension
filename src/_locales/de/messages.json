@@ -4,205 +4,205 @@
         "description": "Name of the extension."
     },
     "extension_description": {
-        "message": "Unofficial ProtonMail extension. Provides notifications and makes it possible to close ProtonMail without getting logged out.",
+        "message": "Inoffizielle ProtonMail Erweiterung. Bietet Benachrichtigungen an und ermöglicht es ProtonMail zu schließen ohne ausgeloggt zu werden.",
         "description": "Description of the extension. Max 132 characters."
     },
     "button_goBack": {
-        "message": "Go back"
+        "message": "Zurück"
     },
     "tooltip_peek": {
-        "message": "Peek"
+        "message": "Vorschau"
     },
     "warning_incognito": {
-        "message": "You have opened ProtonMail in a private browsing tab. The extension won't detect that session."
+        "message": "Du hast ProtonMail in einem privaten Browsertab geöffnen. Die Erweiterung kann die Sitzung nicht erkennen."
     },
     "warning_container": {
-        "message": "You have opened ProtonMail in a containered tab. The extension won't detect that session."
+        "message": "Du hast ProtonMail in einem Container Browsertab geöffnet. Die Erweiterung kann die Sitzung nicht erkennen."
     },
     "accounts_title": {
-        "message": "ProtonMail account list"
+        "message": "ProtonMail Account Liste"
     },
     "accounts_noAccounts": {
-        "message": "Login to ProtonMail and focus on the ProtonMail tab to add your account."
+        "message": "Auf ProtonMail einloggen und den ProtonMail Tab fokussieren um deinen Account hinzuzufügen."
     },
     "accounts_hidden_checkbox": {
-        "message": "Display hidden"
+        "message": "Versteckte anzeigen"
     },
     "settings_title": {
-        "message": "Settings"
+        "message": "Einstellungen"
     },
     "settings_language_label": {
-        "message": "Language"
+        "message": "Sprache"
     },
     "settings_fetchinterval_label": {
-        "message": "Email check interval"
+        "message": "Email Abrufintervall"
     },
     "settings_fetchinterval_option_singular": {
-        "message": "Check for email every minute"
+        "message": "Emails jede Minute abrufen"
     },
     "settings_fetchinterval_option": {
-        "message": "Check for email every $1 minutes"
+        "message": "Emails jede $1 Minuten abrufen"
     },
     "settings_notifications_label": {
-        "message": "Notification settings"
+        "message": "Benachrichtungseinstellungen"
     },
     "settings_notifications_button": {
-        "message": "Expand notifications settings"
+        "message": "Benachrichtungseinstellungen ausklappen"
     },
     "settings_notifications_placeholder": {
-        "message": "Leave empty for default"
+        "message": "Leer lassen für Standard"
     },
     "settings_notifications_single_title": {
-        "message": "Single email notification title"
+        "message": "Benachrichtigungstitel Einzelne Email"
     },
     "settings_notifications_single_message": {
-        "message": "Single email notification message"
+        "message": "Benachrichtigungsnachricht Einzelne Email"
     },
     "settings_notifications_multiple_title": {
-        "message": "Multiple email notification title"
+        "message": "Benachrichtigungstitel Mehrere Emails"
     },
     "settings_notifications_multiple_message": {
-        "message": "Multiple email notification message"
+        "message": "Benachrichtigungsnachricht Mehrere Emails"
     },
     "settings_darkTheme_preLabel": {
-        "message": "Dark Theme"
+        "message": "Dunkles Ansicht"
     },
     "settings_darkTheme_label": {
-        "message": "Use dark theme"
+        "message": "Dunkles Ansicht nutzen"
     },
     "settings_icon_preLabel": {
         "message": "Icon"
     },
     "settings_icon_label": {
-        "message": "Use light icon"
+        "message": "Helles Icon nutzen"
     },
     "settings_domain_label": {
-        "message": "Preferred ProtonMail domain"
+        "message": "Bevorzugte ProtonMail Domain"
     },
     "tooltip_autofill": {
-        "message": "Autofill username in ProtonMail"
+        "message": "ProtonMail Nutzernamen automatisch ausfüllen"
     },
     "tooltip_open": {
-        "message": "Open in ProtonMail"
+        "message": "Auf ProtonMail öffnen"
     },
     "badge_expired": {
-        "message": "Session expired"
+        "message": "Sitzung abgelaufen"
     },
     "button_pmOpen": {
-        "message": "Open ProtonMail"
+        "message": "ProtonMail öffnen"
     },
     "accountSettings_title": {
-        "message": "Settings for $1"
+        "message": "Einstellungen für $1"
     },
     "accountSettings_persistWarning": {
-        "message": "WARNING: Activating this setting will permanently write your $1 mailbox password to your hard drive. Do NOT use it on shared computers.\n Do you still want to continue?"
+        "message": "WARNUNG: Das Aktivieren dieser Einstellung schreibt das Mailbox Passwort von $1 permanent auf deine Festplatte. NICHT auf geteilten Computern zu benutzen.\n Möchtest du dennoch fortfahren?"
     },
     "accountSettings_acceptWarning": {
-        "message": "Enable Anyway"
+        "message": "Trotzdem aktivieren"
     },
     "accountSettings_persist_label": {
-        "message": "Persist session"
+        "message": "Permanente Sitzung"
     },
     "accountSettings_persistToDisk_label": {
-        "message": "Persist even if browser closes"
+        "message": "Speichern selbst wenn Browser geschlossen"
     },
     "accountSettings_badge_label": {
-        "message": "Show unread count badge"
+        "message": "Ungelesen-Anzahl Kennzeichen anzeigen"
     },
     "accountSettings_notifications_label": {
-        "message": "Show notifications on new emails"
+        "message": "Benachrichtigungen bei neuen Emails anzeigen"
     },
     "accountSettings_peeking_label": {
-        "message": "Enable Peeking"
+        "message": "Vorschau aktivieren"
     },
     "accountSettings_hide_label": {
-        "message": "Hide"
+        "message": "Verstecken"
     },
     "accountSettings_expired_title": {
-        "message": "Session expired"
+        "message": "Sitzung abgelaufen"
     },
     "accountSettings_expired_body": {
-        "message": "Your session expired."
+        "message": "Deine Sitzung ist abgelaufen."
     },
     "accountSettings_button_clear": {
-        "message": "Clear sessions"
+        "message": "Sitzungen aufräumen"
     },
     "accountSettings_button_delete": {
-        "message": "Delete"
+        "message": "Löschen"
     },
     "peeking_receivedFrom": {
-        "message": "Received from"
+        "message": "Erhalten von"
     },
     "peeking_markAsRead": {
-        "message": "Mark as read"
+        "message": "Als gelesen markieren"
     },
     "peeking_open": {
-        "message": "Read in ProtonMail"
+        "message": "Auf ProtonMail lesen"
     },
     "peeking_refresh": {
-        "message": "Refresh"
+        "message": "Aktualisieren"
     },
     "peeking_markAllAsRead": {
-        "message": "Mark all as read"
+        "message": "Alle als gelesen markieren"
     },
     "peeking_loading": {
-        "message": "Loading..."
+        "message": "Laden..."
     },
     "peeking_error": {
-        "message": "Error: "
+        "message": "Fehler: "
     },
     "peeking_noMessages": {
-        "message": "There are no unread messages."
+        "message": "Es gibt keine ungelesenen Nachrichten."
     },
     "peeking_moreMessages_button": {
-        "message": "$1 more messages..."
+        "message": "$1 mehr Nachrichten..."
     },
     "notification_single_title": {
-        "message": "New email received from %senderAddress%"
+        "message": "Neue Email erhalten von %senderAddress%"
     },
     "notification_single_message": {
         "message": "%subject%"
     },
     "notification_multiple_title": {
-        "message": "%count% new emails received to %email%"
+        "message": "%count% neue Emails erhalten auf %email%"
     },
     "notification_multiple_message": {
-        "message": "%count% new emails received to %email%"
+        "message": "%count% neue Emails erhalten auf %email%"
     },
     "ago_now": {
-        "message": "just now"
+        "message": "jetzt"
     },
     "ago_minute": {
-        "message": "one minute ago"
+        "message": "vor einer Minute"
     },
     "ago_minutes": {
-        "message": "$1 minutes ago"
+        "message": "vor $1 Minuten"
     },
     "ago_hour": {
-        "message": "one hour ago"
+        "message": "vor einer Stunde"
     },
     "ago_hours": {
-        "message": "$1 hours ago"
+        "message": "vor $1 Stunden"
     },
     "ago_day": {
-        "message": "yesterday"
+        "message": "gestern"
     },
     "ago_days": {
-        "message": "$1 days ago"
+        "message": "vor $1 Tagen"
     },
     "ago_month": {
-        "message": "one month ago"
+        "message": "vor einem Monat"
     },
     "ago_months": {
-        "message": "$1 months ago"
+        "message": "vor $1 Monaten"
     },
     "ago_year": {
-        "message": "one year ago"
+        "message": "vor einem Jahr"
     },
     "ago_years": {
-        "message": "$1 years ago"
+        "message": "vor $1 Jahren"
     },
     "notification_markAsRead": {
-        "message": "Mark as read"
+        "message": "Als gelesen markieren"
     }
 }
