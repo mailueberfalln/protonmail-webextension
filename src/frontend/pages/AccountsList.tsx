@@ -17,7 +17,7 @@ interface AccountsListRowProps {
 const AccountsListRow: React.FC<AccountsListRowProps> = (props) => {
     const account = props.account;
     
-    let firstPartyIsolationEnabled = await (browser as any).privacy.websites.firstPartyIsolate.get({});
+    let firstPartyIsolationEnabled = (browser as any).privacy.websites.firstPartyIsolate.get({});
     
     return <li>
         <div className="email-info " >
@@ -74,7 +74,7 @@ const AccountsList: React.FC<AccountsListProps> = (props) => {
     const accountsToDisplay = props.accounts
         .filter((s) => s.hidden === false || s.sessionExpired === true || props.ui.displayHidden);
     
-    let firstPartyIsolationEnabled = await (browser as any).privacy.websites.firstPartyIsolate.get({});
+    let firstPartyIsolationEnabled = (browser as any).privacy.websites.firstPartyIsolate.get({});
     
     return (
         <div className="accounts-list page">
