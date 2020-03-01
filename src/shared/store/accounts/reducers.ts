@@ -79,8 +79,8 @@ export function accountsReducer(
                 ...state.slice(0, index),
                 {
                     ...state[index], sessions: [
-                        ...state[index].sessions,
                         action.payload.session,
+                        ...state[index].sessions,
                     ],
                     sessionExpired: false,
                 },
