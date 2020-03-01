@@ -269,9 +269,9 @@ export class SessionGrabberService {
 
             let firstPartyDomain = "protonmail.com";
             if (session.domain.includes("protonmail.ch")) { 
-               cleanDomain = "protonmail.ch";
+               firstPartyDomain = "protonmail.ch";
             } else if (session.domain.includes("protonirockerxow.onion")) { //shouldn't need cleaning since it doesn't have a subdomain
-               cleanDomain = "protonirockerxow.onion";
+               firstPartyDomain = "protonirockerxow.onion";
             }
             
             for (const account of accounts) {
