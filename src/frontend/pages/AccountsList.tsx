@@ -16,6 +16,9 @@ interface AccountsListRowProps {
 
 const AccountsListRow: React.FC<AccountsListRowProps> = (props) => {
     const account = props.account;
+    
+    let firstPartyIsolationEnabled = await (browser as any).privacy.websites.firstPartyIsolate.get({});
+    
     return <li>
         <div className="email-info " >
             {typeof account.unreadCount === "number" &&
@@ -33,7 +36,8 @@ const AccountsListRow: React.FC<AccountsListRowProps> = (props) => {
                         email: account.email,
                     }) : peekFromPopup(account.email, true)}
                 icon="eye"
-                tooltip={_("tooltip_peek")}
+                disabled={firstPartyIsolationEnabled}
+                tooltip={firstPartyIsolationEnabled ? _("tooltip_unsupported_isolation") : _("tooltip_peek")}
                 tooltipPosition={"left"}
             />
             <Button
@@ -69,6 +73,9 @@ interface AccountsListProps {
 const AccountsList: React.FC<AccountsListProps> = (props) => {
     const accountsToDisplay = props.accounts
         .filter((s) => s.hidden === false || s.sessionExpired === true || props.ui.displayHidden);
+    
+    let firstPartyIsolationEnabled = await (browser as any).privacy.websites.firstPartyIsolate.get({});
+    
     return (
         <div className="accounts-list page">
             <div className="popup-header">
@@ -85,10 +92,10 @@ const AccountsList: React.FC<AccountsListProps> = (props) => {
                     />
                     <Button
                         visible={accountsToDisplay.length !== 0}
-                        disabled={props.ui.syncing}
+                        disabled={firstPartyIsolationEnabled ? 1 : props.ui.syncing}
                         onClick={() => syncFromPopup()}
                         icon={props.ui.syncing ? "hourglass" : "sync"}
-                        tooltip={_("accounts_tooltip_sync")}
+                        tooltip={firstPartyIsolationEnabled ? _("tooltip_unsupported_isolation") : _("accounts_tooltip_sync")}
                         tooltipPosition={"left"}
                     />
                     <Button
