@@ -38,6 +38,12 @@ export class FetcherCronService {
     }
 
     async pulse() {
+        let firstPartyIsolationEnabled = await (browser as any).privacy.websites.firstPartyIsolate.get({});
+
+        if (firstPartyIsolationEnabled) { //prevent pulse when FPI enabled. XHR doesn't send required cookies. otherwise a working session will be removed
+            return;
+        }
+
         try {
             if (this.pulseRunning) {
                 return;
