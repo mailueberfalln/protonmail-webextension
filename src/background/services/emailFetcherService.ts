@@ -175,8 +175,8 @@ export class EmailFetcherService {
                                 error.response.status !== 429 &&
                                 error.response.status < 500)) {
                             // session expired! remove it
-                            //backgroundStore.dispatch(rootAction.accounts.removeSessionFromAccount(account.email, session.uid));
-                            //logger.debug(`${session.email} session expired`);
+                            backgroundStore.dispatch(rootAction.accounts.removeSessionFromAccount(account.email, session.uid));
+                            logger.debug(`${session.email} session expired`);
                         }
                     }
                 } else {
