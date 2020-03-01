@@ -31,6 +31,9 @@
     "accounts_tooltip_sync": {
         "message": "Fetch new email"
     },
+    "accounts_tooltip_unsupported": {
+        "message": "Unavailable (privacy.firstparty.isolate is enabled)"
+    },
     "accounts_tooltip_account_settings": {
         "message": "Open account settings"
     },
