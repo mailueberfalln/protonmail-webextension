@@ -30,13 +30,12 @@ const AccountsListRow: React.FC<AccountsListRowProps> = (props) => {
         </div>
         <div className="buttons">
             <Button
-                visible={account.sessions.length !== 0 && account.peeking}
+                visible={firstPartyIsolationEnabled ? false : (account.sessions.length !== 0 && account.peeking)}
                 onClick={() => process.env.NODE_ENV === "development" ?
                     props.setPeek({
                         email: account.email,
                     }) : peekFromPopup(account.email, true)}
                 icon="eye"
-                disabled={firstPartyIsolationEnabled}
                 tooltip={firstPartyIsolationEnabled ? _("tooltip_unsupported_isolation") : _("tooltip_peek")}
                 tooltipPosition={"left"}
             />
@@ -91,7 +90,7 @@ const AccountsList: React.FC<AccountsListProps> = (props) => {
                         tooltipPosition={"left"}
                     />
                     <Button
-                        visible={accountsToDisplay.length !== 0}
+                        visible={firstPartyIsolationEnabled ? false : (accountsToDisplay.length !== 0)}
                         disabled={firstPartyIsolationEnabled ? true : props.ui.syncing}
                         onClick={() => syncFromPopup()}
                         icon={props.ui.syncing ? "hourglass" : "sync"}
