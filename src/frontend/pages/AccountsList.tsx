@@ -6,6 +6,7 @@ import { syncFromPopup } from "../helpers/syncFromPopup";
 import { peekFromPopup } from "../helpers/peekFromPopup";
 import Button from "../components/button";
 import { _ } from "../../shared/i18n";
+import { isFirstPartyIsolation } from "../../shared/helper";
 
 interface AccountsListRowProps {
     account: IProtonAccount;
@@ -17,7 +18,7 @@ interface AccountsListRowProps {
 const AccountsListRow: React.FC<AccountsListRowProps> = (props) => {
     const account = props.account;
     
-    let firstPartyIsolationEnabled = (browser as any).privacy.websites.firstPartyIsolate.get({});
+    let firstPartyIsolationEnabled = isFirstPartyIsolation();
     
     return <li>
         <div className="email-info " >
@@ -73,7 +74,7 @@ const AccountsList: React.FC<AccountsListProps> = (props) => {
     const accountsToDisplay = props.accounts
         .filter((s) => s.hidden === false || s.sessionExpired === true || props.ui.displayHidden);
     
-    let firstPartyIsolationEnabled = (browser as any).privacy.websites.firstPartyIsolate.get({});
+    let firstPartyIsolationEnabled = isFirstPartyIsolation();
     
     return (
         <div className="accounts-list page">
