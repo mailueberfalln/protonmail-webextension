@@ -3,6 +3,7 @@ import { logger } from "../helpers/logger";
 import { popupTracker } from "../helpers/popupTracker";
 import { backgroundStore } from "../backgroundStore";
 import { rootAction } from "../../shared/store";
+import { isFirstPartyIsolation } from "../../shared/helper";
 
 export class FetcherCronService {
     private pulseRunning = false;
@@ -38,9 +39,7 @@ export class FetcherCronService {
     }
 
     async pulse() {
-        let firstPartyIsolationEnabled = await (browser as any).privacy.websites.firstPartyIsolate.get({});
-
-        if (firstPartyIsolationEnabled) { //prevent pulse when FPI enabled. XHR doesn't send required cookies. otherwise a working session will be removed
+        if (await isFirstPartyIsolation()) { //prevent pulse when FPI enabled. XHR doesn't send required cookies. otherwise a working session will be removed
             return;
         }
 
