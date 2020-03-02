@@ -8,6 +8,7 @@ import { rootAction } from "../../shared/store";
 import { fetcherCronService } from "./fetcherCronService";
 import { openEmail } from "../helpers/openEmail";
 import { parseMailtoURL } from "../helpers/parseMailtoURL";
+import { isFirstPartyIsolation } from "../../shared/helper";
 
 export class SessionGrabberService {
     private lastReqTime = 0;
@@ -242,15 +243,17 @@ export class SessionGrabberService {
     async getAllCookies() {
         const allCookies = [];
         
+        let firstPartyIsolationEnabled = await isFirstPartyIsolation();
+        
         for (const domain of protonDomains) {
             const cookies = [...await browser.cookies.getAll({
                 url: `https://${domain}/api/`,
                 path: "/api/",
-                firstPartyDomain: null as any,
+                firstPartyDomain: (firstPartyIsolationEnabled ? null as any : undefined),
             }), ...await browser.cookies.getAll({
                 url: `https://${domain}/api/auth/refresh`,
                 path: "/api/auth/refresh",
-                firstPartyDomain: null as any,
+                firstPartyDomain: (firstPartyIsolationEnabled ? null as any : undefined),
             })];
             for (const cookie of cookies) {
                 allCookies.push(cookie);
@@ -265,7 +268,7 @@ export class SessionGrabberService {
         try {
             const allCookies = await this.getAllCookies();
 
-            let firstPartyIsolationEnabled = await (browser as any).privacy.websites.firstPartyIsolate.get({});
+            let firstPartyIsolationEnabled = await isFirstPartyIsolation();
             
             for (const account of accounts) {
                 for (const session of account.sessions) {
