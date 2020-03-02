@@ -249,11 +249,11 @@ export class SessionGrabberService {
             const cookies = [...await browser.cookies.getAll({
                 url: `https://${domain}/api/`,
                 path: "/api/",
-                firstPartyDomain: (firstPartyIsolationEnabled ? null as any : undefined),
+                ...(firstPartyIsolationEnabled ? {firstPartyDomain: null as any} : {}),
             }), ...await browser.cookies.getAll({
                 url: `https://${domain}/api/auth/refresh`,
                 path: "/api/auth/refresh",
-                firstPartyDomain: (firstPartyIsolationEnabled ? null as any : undefined),
+                ...(firstPartyIsolationEnabled ? {firstPartyDomain: null as any} : {}),
             })];
             for (const cookie of cookies) {
                 allCookies.push(cookie);
@@ -296,7 +296,7 @@ export class SessionGrabberService {
                                 httpOnly: true,
                                 secure: true,
                                 value: session.accessTokenCookie as string,
-                                firstPartyDomain: firstPartyIsolationEnabled ? firstPartyDomain : null,
+                                ...(firstPartyIsolationEnabled ? {firstPartyDomain: firstPartyDomain} : {}),
                                 // sameSite: "no_restriction"
                             } as any);
                             await browser.cookies.set({
@@ -306,7 +306,7 @@ export class SessionGrabberService {
                                 httpOnly: true,
                                 secure: true,
                                 value: session.refreshTokenCookie as string,
-                                firstPartyDomain: firstPartyIsolationEnabled ? firstPartyDomain : null,
+                                ...(firstPartyIsolationEnabled ? {firstPartyDomain: firstPartyDomain} : {}),
                                 // sameSite: "no_restriction"
                             } as any);
                         } catch (error) {
