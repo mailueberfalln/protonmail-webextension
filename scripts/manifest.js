@@ -30,7 +30,8 @@ function generateManifest() {
             "cookies",
             "notifications",
             "webRequest",
-            "alarms"],
+            "alarms",
+            "privacy"],
     ];
 
     const manifest = {

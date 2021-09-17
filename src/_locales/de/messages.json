@@ -1,0 +1,229 @@
+{
+    "extension_name": {
+        "message": "ProtonMail (unofficial)",
+        "description": "Name of the extension."
+    },
+    "extension_description": {
+        "message": "Inoffizielle ProtonMail Erweiterung. Bietet Benachrichtigungen an und ermöglicht es ProtonMail zu schließen ohne ausgeloggt zu werden.",
+        "description": "Description of the extension. Max 132 characters."
+    },
+    "button_goBack": {
+        "message": "Zurück"
+    },
+    "tooltip_peek": {
+        "message": "Vorschau"
+    },
+    "warning_incognito": {
+        "message": "Du hast ProtonMail in einem privaten Browsertab geöffnen. Die Erweiterung kann die Sitzung nicht erkennen."
+    },
+    "warning_container": {
+        "message": "Du hast ProtonMail in einem Container Browsertab geöffnet. Die Erweiterung kann die Sitzung nicht erkennen."
+    },
+    "accounts_title": {
+        "message": "ProtonMail Account Liste"
+    },
+    "accounts_tooltip_settings": {
+        "message": "Einstellungen öffnen"
+    },
+    "accounts_tooltip_help": {
+        "message": "Hilfeseite öffnen"
+    },
+    "accounts_tooltip_sync": {
+        "message": "Neue Emails abrufen"
+    },
+    "accounts_tooltip_account_settings": {
+        "message": "Accounteinstellungen öffnen"
+    },
+    "accounts_noAccounts": {
+        "message": "Auf ProtonMail einloggen und den ProtonMail Tab fokussieren um deinen Account hinzuzufügen."
+    },
+    "accounts_hidden_checkbox": {
+        "message": "Versteckte anzeigen"
+    },
+    "settings_title": {
+        "message": "Einstellungen"
+    },
+    "settings_language_label": {
+        "message": "Sprache"
+    },
+    "settings_fetchinterval_label": {
+        "message": "Email Abrufintervall"
+    },
+    "settings_fetchinterval_option_singular": {
+        "message": "Emails jede Minute abrufen"
+    },
+    "settings_fetchinterval_option": {
+        "message": "Emails jede $1 Minuten abrufen"
+    },
+    "settings_notifications_label": {
+        "message": "Benachrichtungseinstellungen"
+    },
+    "settings_notifications_button": {
+        "message": "Benachrichtungseinstellungen ausklappen"
+    },
+    "settings_notifications_placeholder": {
+        "message": "Leer lassen für Standard"
+    },
+    "settings_notifications_single_title": {
+        "message": "Benachrichtigungstitel Einzelne Email"
+    },
+    "settings_notifications_single_message": {
+        "message": "Benachrichtigungsnachricht Einzelne Email"
+    },
+    "settings_notifications_multiple_title": {
+        "message": "Benachrichtigungstitel Mehrere Emails"
+    },
+    "settings_notifications_multiple_message": {
+        "message": "Benachrichtigungsnachricht Mehrere Emails"
+    },
+    "settings_darkTheme_preLabel": {
+        "message": "Dunkle Ansicht"
+    },
+    "settings_darkTheme_label": {
+        "message": "Dunkle Ansicht nutzen"
+    },
+    "settings_icon_preLabel": {
+        "message": "Icon"
+    },
+    "settings_icon_label": {
+        "message": "Helles Icon nutzen"
+    },
+    "settings_domain_label": {
+        "message": "Bevorzugte ProtonMail Domain"
+    },
+    "settings_version_label": {
+        "message": "Version"
+    },
+    "tooltip_autofill": {
+        "message": "ProtonMail Nutzernamen automatisch ausfüllen"
+    },
+    "tooltip_open": {
+        "message": "Auf ProtonMail öffnen"
+    },
+    "tooltip_unsupported_isolation": {
+        "message": "Nicht verfügbar (privacy.firstparty.isolate aktiviert)"
+    },
+    "badge_expired": {
+        "message": "Sitzung abgelaufen"
+    },
+    "button_pmOpen": {
+        "message": "ProtonMail öffnen"
+    },
+    "accountSettings_title": {
+        "message": "Einstellungen für $1"
+    },
+    "accountSettings_persistWarning": {
+        "message": "WARNUNG: Das Aktivieren dieser Einstellung schreibt das Mailbox Passwort von $1 permanent auf deine Festplatte. NICHT auf geteilten Computern zu benutzen.\n Möchtest du dennoch fortfahren?"
+    },
+    "accountSettings_acceptWarning": {
+        "message": "Trotzdem aktivieren"
+    },
+    "accountSettings_persist_label": {
+        "message": "Permanente Sitzung"
+    },
+    "accountSettings_persistToDisk_label": {
+        "message": "Speichern selbst wenn Browser geschlossen"
+    },
+    "accountSettings_badge_label": {
+        "message": "Ungelesen-Anzahl Kennzeichen anzeigen"
+    },
+    "accountSettings_notifications_label": {
+        "message": "Benachrichtigungen bei neuen Emails anzeigen"
+    },
+    "accountSettings_peeking_label": {
+        "message": "Vorschau aktivieren"
+    },
+    "accountSettings_hide_label": {
+        "message": "Verstecken"
+    },
+    "accountSettings_expired_title": {
+        "message": "Sitzung abgelaufen"
+    },
+    "accountSettings_expired_body": {
+        "message": "Deine Sitzung ist abgelaufen."
+    },
+    "accountSettings_button_clear": {
+        "message": "Sitzungen aufräumen"
+    },
+    "accountSettings_button_delete": {
+        "message": "Löschen"
+    },
+    "accountSettings_set_as_handler": {
+        "message": "Als mailto: Protokollhandler registrieren"
+    },
+    "peeking_receivedFrom": {
+        "message": "Erhalten von"
+    },
+    "peeking_markAsRead": {
+        "message": "Als gelesen markieren"
+    },
+    "peeking_open": {
+        "message": "Auf ProtonMail lesen"
+    },
+    "peeking_refresh": {
+        "message": "Aktualisieren"
+    },
+    "peeking_markAllAsRead": {
+        "message": "Alle als gelesen markieren"
+    },
+    "peeking_loading": {
+        "message": "Laden..."
+    },
+    "peeking_error": {
+        "message": "Fehler: "
+    },
+    "peeking_noMessages": {
+        "message": "Es gibt keine ungelesenen Nachrichten."
+    },
+    "peeking_moreMessages_button": {
+        "message": "$1 mehr Nachrichten..."
+    },
+    "notification_single_title": {
+        "message": "Neue Email erhalten von %senderAddress%"
+    },
+    "notification_single_message": {
+        "message": "%subject%"
+    },
+    "notification_multiple_title": {
+        "message": "%count% neue Emails erhalten auf %email%"
+    },
+    "notification_multiple_message": {
+        "message": "%count% neue Emails erhalten auf %email%"
+    },
+    "ago_now": {
+        "message": "jetzt"
+    },
+    "ago_minute": {
+        "message": "vor einer Minute"
+    },
+    "ago_minutes": {
+        "message": "vor $1 Minuten"
+    },
+    "ago_hour": {
+        "message": "vor einer Stunde"
+    },
+    "ago_hours": {
+        "message": "vor $1 Stunden"
+    },
+    "ago_day": {
+        "message": "gestern"
+    },
+    "ago_days": {
+        "message": "vor $1 Tagen"
+    },
+    "ago_month": {
+        "message": "vor einem Monat"
+    },
+    "ago_months": {
+        "message": "vor $1 Monaten"
+    },
+    "ago_year": {
+        "message": "vor einem Jahr"
+    },
+    "ago_years": {
+        "message": "vor $1 Jahren"
+    },
+    "notification_markAsRead": {
+        "message": "Als gelesen markieren"
+    }
+}

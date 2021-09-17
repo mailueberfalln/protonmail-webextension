@@ -100,6 +100,9 @@
     "tooltip_open": {
         "message": "Open in ProtonMail"
     },
+    "tooltip_unsupported_isolation": {
+        "message": "Unavailable (privacy.firstparty.isolate is enabled)"
+    },
     "badge_expired": {
         "message": "Session expired"
     },

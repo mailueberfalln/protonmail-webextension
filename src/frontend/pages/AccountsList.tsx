@@ -6,6 +6,7 @@ import { syncFromPopup } from "../helpers/syncFromPopup";
 import { peekFromPopup } from "../helpers/peekFromPopup";
 import Button from "../components/button";
 import { _ } from "../../shared/i18n";
+import { isFirstPartyIsolation } from "../../shared/helper";
 
 interface AccountsListRowProps {
     account: IProtonAccount;
@@ -16,6 +17,9 @@ interface AccountsListRowProps {
 
 const AccountsListRow: React.FC<AccountsListRowProps> = (props) => {
     const account = props.account;
+    
+    let firstPartyIsolationEnabled = isFirstPartyIsolation();
+    
     return <li>
         <div className="email-info " >
             {typeof account.unreadCount === "number" &&
@@ -27,13 +31,13 @@ const AccountsListRow: React.FC<AccountsListRowProps> = (props) => {
         </div>
         <div className="buttons">
             <Button
-                visible={account.sessions.length !== 0 && account.peeking}
+                visible={firstPartyIsolationEnabled ? false : (account.sessions.length !== 0 && account.peeking)}
                 onClick={() => process.env.NODE_ENV === "development" ?
                     props.setPeek({
                         email: account.email,
                     }) : peekFromPopup(account.email, true)}
                 icon="eye"
-                tooltip={_("tooltip_peek")}
+                tooltip={firstPartyIsolationEnabled ? _("tooltip_unsupported_isolation") : _("tooltip_peek")}
                 tooltipPosition={"left"}
             />
             <Button
@@ -69,6 +73,9 @@ interface AccountsListProps {
 const AccountsList: React.FC<AccountsListProps> = (props) => {
     const accountsToDisplay = props.accounts
         .filter((s) => s.hidden === false || s.sessionExpired === true || props.ui.displayHidden);
+    
+    let firstPartyIsolationEnabled = isFirstPartyIsolation();
+    
     return (
         <div className="accounts-list page">
             <div className="popup-header">
@@ -84,11 +91,11 @@ const AccountsList: React.FC<AccountsListProps> = (props) => {
                         tooltipPosition={"left"}
                     />
                     <Button
-                        visible={accountsToDisplay.length !== 0}
-                        disabled={props.ui.syncing}
+                        visible={firstPartyIsolationEnabled ? false : (accountsToDisplay.length !== 0)}
+                        disabled={firstPartyIsolationEnabled ? true : props.ui.syncing}
                         onClick={() => syncFromPopup()}
                         icon={props.ui.syncing ? "hourglass" : "sync"}
-                        tooltip={_("accounts_tooltip_sync")}
+                        tooltip={firstPartyIsolationEnabled ? _("tooltip_unsupported_isolation") : _("accounts_tooltip_sync")}
                         tooltipPosition={"left"}
                     />
                     <Button

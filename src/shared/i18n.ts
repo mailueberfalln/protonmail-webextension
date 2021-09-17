@@ -11,6 +11,10 @@ export const availableLanguages = [
         lang: "es",
         name: "Español",
     },
+    {
+        lang: "de",
+        name: "Deutsch",
+    }
 ];
 
 export const loadLocale = async (lang: string) => {

@@ -8,6 +8,7 @@ import { rootAction } from "../../shared/store";
 import { fetcherCronService } from "./fetcherCronService";
 import { openEmail } from "../helpers/openEmail";
 import { parseMailtoURL } from "../helpers/parseMailtoURL";
+import { isFirstPartyIsolation } from "../../shared/helper";
 
 export class SessionGrabberService {
     private lastReqTime = 0;
@@ -241,14 +242,18 @@ export class SessionGrabberService {
 
     async getAllCookies() {
         const allCookies = [];
-
+        
+        let firstPartyIsolationEnabled = await isFirstPartyIsolation();
+        
         for (const domain of protonDomains) {
             const cookies = [...await browser.cookies.getAll({
                 url: `https://${domain}/api/`,
                 path: "/api/",
+                ...(firstPartyIsolationEnabled ? {firstPartyDomain: null as any} : {}),
             }), ...await browser.cookies.getAll({
                 url: `https://${domain}/api/auth/refresh`,
                 path: "/api/auth/refresh",
+                ...(firstPartyIsolationEnabled ? {firstPartyDomain: null as any} : {}),
             })];
             for (const cookie of cookies) {
                 allCookies.push(cookie);
@@ -263,11 +268,20 @@ export class SessionGrabberService {
         try {
             const allCookies = await this.getAllCookies();
 
+            let firstPartyIsolationEnabled = await isFirstPartyIsolation();
+            
             for (const account of accounts) {
                 for (const session of account.sessions) {
                     const uid = session.uid;
                     const authCookie = allCookies.find((n) => n.name === `AUTH-${uid}`);
                     const refreshCookie = allCookies.find((n) => n.name === `REFRESH-${uid}`);
+                    
+                    let firstPartyDomain = "protonmail.com";
+                    if (session.domain.includes("protonmail.ch")) { 
+                       firstPartyDomain = "protonmail.ch";
+                    } else if (session.domain.includes("protonirockerxow.onion")) { //shouldn't need cleaning since it doesn't have a subdomain
+                       firstPartyDomain = "protonirockerxow.onion";
+                    }
 
                     if (authCookie === undefined &&
                         refreshCookie === undefined &&
@@ -282,6 +296,7 @@ export class SessionGrabberService {
                                 httpOnly: true,
                                 secure: true,
                                 value: session.accessTokenCookie as string,
+                                ...(firstPartyIsolationEnabled ? {firstPartyDomain: firstPartyDomain} : {}),
                                 // sameSite: "no_restriction"
                             } as any);
                             await browser.cookies.set({
@@ -291,6 +306,7 @@ export class SessionGrabberService {
                                 httpOnly: true,
                                 secure: true,
                                 value: session.refreshTokenCookie as string,
+                                ...(firstPartyIsolationEnabled ? {firstPartyDomain: firstPartyDomain} : {}),
                                 // sameSite: "no_restriction"
                             } as any);
                         } catch (error) {
